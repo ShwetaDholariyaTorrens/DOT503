@@ -1,22 +1,19 @@
 import unittest
-from app_test import addition, subtraction, multiplication, division
+from test import is_palindrome
 
-class TestMyApp(unittest.TestCase):
-    def test_addition(self):
-        self.assertEqual(addition(2, 3), 5)
 
-    def test_subtraction(self):
-        self.assertNotEqual(subtraction(5, 3), 2)
+class TestIsPalindrome(unittest.TestCase):
+    def test_palindromes(self):
+        # positive test cases (palindromes)
+        self.assertTrue(is_palindrome("racecar"))     # correct
+        self.assertTrue(is_palindrome("A man a plan a canal Panama"))    # correct
+        self.assertTrue(is_palindrome("Was It A Rat I Saw"))           # correct
 
-    def test_multiplication(self):
-        self.assertEqual(multiplication(3, 4) == 11)
+    def test_non_palindromes(self):
+        # negative test cases (not palindromes)
+        self.assertFalse(is_palindrome("hello"))      # correct
+        self.assertFalse(is_palindrome("Python Programming"))           # correct    
 
-    def test_division(self):
-        self.assertEqual(division(10, 2), 6)
-
-    def test_division_by_zero(self):
-        self.assertRaises(ZeroDivisionError, division, 10, 0)
 
 if __name__ == '__main__':
     unittest.main()
-
