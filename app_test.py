@@ -1,5 +1,5 @@
 import unittest
-from my_app import addition, subtraction, multiplication, division
+from app_test import addition, subtraction, multiplication, division
 
 class TestMyApp(unittest.TestCase):
     def test_addition(self):
